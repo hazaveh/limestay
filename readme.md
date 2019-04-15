@@ -38,5 +38,10 @@ php artisan limestay:install
 
 7. run this script on your web server.
 
+8. to run tests
+```bash
+./vendor/bin/phpunit
+```
+
 ## Notes:
 This app uses Browser GeoLocation API. you may need to create a self signed ssl certificate on the host you run the app as chrome doesn't allow access to device location when a page is served without SSL.
