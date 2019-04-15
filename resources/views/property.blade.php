@@ -20,7 +20,9 @@
                             </div>
                             <button type="submit" @if(!Auth::user()) disabled @endif class="btn btn-success btn-block">Confirm Booking</button>
                         </form>
+                        @if(!Auth::user())
                         <p class="text-center mt-2 text-danger">Please <a href="{{ url('login') }}">Login</a> or <a href="{{ url('register') }}">Register</a> to confirm your Booking.</p>
+                        @endif
                     </div>
             </div>
     </div>
