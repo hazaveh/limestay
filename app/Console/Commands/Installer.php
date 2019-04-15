@@ -54,6 +54,7 @@ class Installer extends Command
         Artisan::call('migrate:fresh');
         $this->info(Artisan::output());
 
+        Artisan::call('config:clear');
 
 
     }

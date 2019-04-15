@@ -4,7 +4,11 @@ a sample PHP booking application written on Laravel.
 
 LimeStay uses here.com api to find places nearby to user and stores a fake booking in the database.
 
-You will need to enable GeoLocation Access on your Browser.
+- You need a browser with Geolocation Capabilities
+- This app uses unsplash api to randomly show resorts/hotels photo to make things more interesting.
+
+![](https://hazaveh.net/wp-content/uploads/limestay.png)
+
 
 # Installation
 
@@ -34,5 +38,5 @@ php artisan limestay:install
 
 7. run this script on your web server.
 
-## NOTE:
+## Notes:
 This app uses Browser GeoLocation API. you may need to create a self signed ssl certificate on the host you run the app as chrome doesn't allow access to device location when a page is served without SSL.
