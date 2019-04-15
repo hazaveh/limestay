@@ -6,8 +6,10 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class APICallsTest extends TestCase
+class BookingAPICallsTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_nearby_places_api() {
         $response = $this->get('/nearby?lat=3.0069198&lng=101.5363881');
         
@@ -21,7 +23,9 @@ class APICallsTest extends TestCase
 
     public function test_bookings_for_property() {
         
-        $response = $this->get('/properties/1/bookings');
+        $property = $this->createProperty();
+
+        $response = $this->get("/properties/{$property->id}/bookings");
 
         $response->assertJsonStructure();
 
@@ -30,7 +34,9 @@ class APICallsTest extends TestCase
 
     public function test_user_bookings() {
         
-        $response = $this->get('/users/1/bookings');
+        $user = $this->createUser();
+        
+        $response = $this->get("/users/{$user->id}/bookings");
 
         $response->assertStatus(200);
 

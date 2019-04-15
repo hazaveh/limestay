@@ -7,8 +7,10 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
 
+
 class AuthenticationTest extends TestCase
 {
+    use RefreshDatabase;
 
     public function test_register_page_works() {
         

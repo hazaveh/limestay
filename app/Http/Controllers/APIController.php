@@ -51,7 +51,7 @@ class APIController extends Controller
     }
 
     public function userBookings(User $user) {
-        return response()->json(["bookings" => app('App\Http\Controllers\BookingController')->byUser($user)]);
+        return response()->json(["bookings" => app('App\Http\Controllers\BookingController')->byUser($user)], 200);
     }
 
     public function propertyBookings(Property $property) {

@@ -19,7 +19,7 @@ class CreatePropertiesTable extends Migration
             $table->string('property_id')->unique();
             $table->text('address')->nullable();
             $table->text('href');
-            $table->text('response');
+            $table->text('response')->nullable();
             $table->timestamps();
         });
     }
